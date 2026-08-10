@@ -44,6 +44,20 @@
     text-align: center;
   }
 
+  /* A lista tem margem direita irregular: a maioria das linhas é bem mais
+     curta que a mais longa, então o bloco PARECE deslocado para a esquerda
+     mesmo estando geometricamente centrado. O olho centraliza pela linha
+     média, não pela mais longa. Este empurrão corrige o efeito óptico.
+       0     = centro geométrico (o que havia antes)
+       2em   = correção parcial, atual
+       3.5em = centro da linha média (correção total) */
+  :root { --desloca: 2em; }
+
+  .dia, .prog ol {
+    position: relative;
+    left: var(--desloca);
+  }
+
   .dia {
     margin: 2.4em 0 0.6em;
   }
@@ -111,6 +125,8 @@
     line-height: 1.45;
     text-align: center;
     z-index: 3;
+    max-height: calc(100vh - 24px);   /* nunca mais alta que a janela */
+    overflow: auto;
   }
 
   #card.on { display: block; }
@@ -163,6 +179,7 @@
      telas estreitas: a nota vira rodapé fixo, sem linha
      --------------------------------------------------------------- */
   @media (max-width: 900px) {
+    :root { --desloca: 0px; }   /* em tela estreita nao sobra margem para empurrar */
     body { padding: 32px 18px 45vh; }
     #leader { display: none; }
     #card {
@@ -471,9 +488,18 @@
     var linkMeio   = linkTopo + r.height / 2;
     var alturaCard = card.offsetHeight;
 
+    // posicao ideal: nota centrada na altura do termo
     var topo = linkMeio - alturaCard / 2;
-    if (topo < 0) topo = 0;
-    if (topo + alturaCard > wrap.offsetHeight) topo = wrap.offsetHeight - alturaCard;
+
+    // ...mas ela nunca pode sair da janela, senao fica ilegivel perto do
+    // fim do scroll. os limites abaixo estao em coordenadas do .wrap.
+    var margem  = 12;
+    var minTopo = margem - w.top;
+    var maxTopo = window.innerHeight - margem - alturaCard - w.top;
+    if (maxTopo < minTopo) maxTopo = minTopo;   // nota mais alta que a janela
+    if (topo < minTopo) topo = minTopo;
+    if (topo > maxTopo) topo = maxTopo;
+
     card.style.top = topo + 'px';
 
     // linha ligando a borda interna da nota à borda do termo
@@ -558,12 +584,16 @@
     if (e.target && e.target.classList.contains('fechar')) { e.preventDefault(); fechar(); }
   });
 
-  window.addEventListener('resize', function () {
+  function reposicionar() {
     if (atual && card.classList.contains('on')) {
       if (estreito()) svg.style.display = 'none';
       else posicionar(atual);
     }
-  });
+  }
+
+  window.addEventListener('resize', reposicionar);
+  // rolar com a nota aberta reajusta, para ela nunca sair da janela
+  window.addEventListener('scroll', reposicionar, { passive: true });
 })();
 </script>
 
