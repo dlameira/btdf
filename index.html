@@ -86,6 +86,8 @@
     color: #00e;
     text-decoration: underline;
     cursor: help;
+    touch-action: manipulation;               /* mata o atraso do duplo-toque */
+    -webkit-tap-highlight-color: rgba(0,0,238,.12);
   }
 
   .ref:focus {
@@ -132,6 +134,23 @@
 
   #card .nome { display: block; margin-bottom: 0.4em; }
 
+  /* botao de fechar: so em tela estreita */
+  #card .fechar {
+    display: none;
+    position: absolute;
+    top: 4px;
+    right: 8px;
+    background: none;
+    border: none;
+    font: inherit;
+    font-size: 24px;
+    line-height: 1;
+    color: #000;
+    padding: 6px 10px;
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+
   /* a linha fina que liga a nota ao texto */
   #leader {
     position: absolute;
@@ -159,6 +178,8 @@
     }
     #card .fig { max-width: 180px; margin: 0 auto 12px; }
     #card .fig.empty { max-width: 180px; }
+    #card .fechar { display: block; }
+    #card { padding-top: 34px; }
   }
 </style>
 </head>
@@ -208,7 +229,7 @@
           data-txt="Artista russa nascida em Moscou, em 1971, pioneira da net.art. &ldquo;My Boyfriend Came Back from the War&rdquo; (1996) é uma das obras fundadoras do campo. Professora na Merz Akademie, em Stuttgart. Arquiva e estuda a web amadora dos anos 90."
           >Olia Lialina</span>, <span class="ref" tabindex="0" data-side="right"
           data-nome="net.art"
-          data-img=""
+          data-img="img/netart.gif"
           data-txt="Movimento dos anos 1990 que tratou a internet não como vitrine para a obra, mas como material dela: HTML cru, GIFs, janelas de navegador, links quebrados. Boa parte do acervo desapareceu junto com os servidores que o hospedavam."
           >net artist</span></li>
 
@@ -224,11 +245,11 @@
 
       <li><span class="ref" tabindex="0" data-side="left"
           data-nome="Hito Steyerl"
-          data-img=""
+          data-img="img/steyerl.jpg"
           data-txt="Artista e ensaísta alemã nascida em Munique, em 1966. Faz videoinstalações e escreve sobre circulação de imagens, vigilância e capital. Professora na Universidade das Artes de Berlim. Autora de &ldquo;Duty Free Art&rdquo;."
           >Hito Steyerl</span>, filósofa e artista sobre <span class="ref" tabindex="0" data-side="right"
           data-nome="a imagem pobre"
-          data-img=""
+          data-img="img/imagempobre.jpg"
           data-txt="Em ensaio de 2009, Steyerl defende a imagem de baixa resolução, comprimida e pirateada &mdash; a que de fato circula &mdash; contra a imagem rica, cara e imobilizada. A qualidade da imagem, argumenta ela, é uma questão de classe."
           >mídias digitais</span></li>
     </ol>
@@ -242,13 +263,13 @@
           data-txt="Cientista da computação brasileira, nascida em Duque de Caxias. Define-se como hacker antirracista. Pesquisa vieses algorítmicos e os efeitos raciais de sistemas automatizados. Fundou o Instituto da Hora."
           >Nina da Hora</span>, ativista e acadêmica estudando <span class="ref" tabindex="0" data-side="right"
           data-nome="racismo algorítmico"
-          data-img=""
+          data-img="img/racismo.jpg"
           data-txt="Modo como sistemas automatizados &mdash; reconhecimento facial, crédito, moderação, triagem &mdash; reproduzem e ampliam desigualdades raciais já existentes, com a aparência de neutralidade técnica."
           >ia e racismo</span></li>
 
       <li>exibição de <span class="ref" tabindex="0" data-side="left"
           data-nome="We Are as Gods"
-          data-img=""
+          data-img="img/weareasgods.jpg"
           data-txt="Documentário de 2020, dirigido por David Alvarado e Jason Sussberg. O título vem da primeira frase do Whole Earth Catalog, em 1968: &ldquo;somos como deuses e é melhor a gente ficar bom nisso&rdquo;. Em 2009, Brand reescreveu a própria frase: &ldquo;somos como deuses e temos que ficar bons nisso&rdquo;."
           >We Are as Gods</span>, filme sobre <span class="ref" tabindex="0" data-side="right"
           data-nome="Stewart Brand"
@@ -286,7 +307,7 @@
     <ol start="9" style="counter-reset: item 8;">
       <li><span class="ref" tabindex="0" data-side="left"
           data-nome="Chris Freeland"
-          data-img=""
+          data-img="img/freeland.jpg"
           data-txt="Bibliotecário, diretor de serviços de biblioteca do Internet Archive. Conduz o programa Open Libraries e foi a voz pública do Archive na disputa judicial com editoras sobre empréstimo digital de livros."
           >Chris Freeland</span>, da <span class="ref" tabindex="0" data-side="right"
           data-nome="Internet Archive"
@@ -300,13 +321,13 @@
           data-txt="Artista e professora da Faculdade de Arquitetura e Urbanismo da USP. Trabalha com arte digital, memória e apagamento urbano. Autora de &ldquo;Políticas da Imagem: Vigilância e Resistência na Dadosfera&rdquo;."
           >Giselle Beiguelman</span>, <span class="ref" tabindex="0" data-side="right"
           data-nome="arte digital e memória"
-          data-img=""
+          data-img="img/artedigital.png"
           data-txt="Conservar uma obra feita para a internet significa conservar navegadores, plugins, servidores e formatos que deixaram de existir. Diferente de um quadro, ela não sobrevive por inércia: alguém precisa mantê-la funcionando."
           >acadêmica e artista</span></li>
 
       <li><span class="ref" tabindex="0" data-side="left"
           data-nome="aarea"
-          data-img=""
+          data-img="img/aarea.jpg"
           data-txt="Plataforma brasileira de arte digital fundada em São Paulo, em 2017, por Livia Benedetti e Marcela Vieira. Comissiona obras feitas especificamente para a internet, exibidas por tempo determinado."
           >aarea</span> e <span class="ref" tabindex="0" data-side="left"
           data-nome="Rhizome"
@@ -314,7 +335,7 @@
           data-txt="Organização americana fundada em 1996, ligada ao New Museum de Nova York desde 2003. Comissiona arte digital, mantém o acervo ArtBase e desenvolve ferramentas de arquivamento da web."
           >Rhizome</span>, <span class="ref" tabindex="0" data-side="right"
           data-nome="preservação"
-          data-img=""
+          data-img="img/preservacao.jpg"
           data-txt="Duas instituições que fazem a mesma coisa &mdash; encomendar e conservar arte feita para a internet &mdash; em escalas de recurso opostas, uma no Brasil e outra nos Estados Unidos."
           >instituições de vanguarda</span></li>
 
@@ -377,11 +398,19 @@
           >Neuromancer</span></li>
     </ol>
 
-    <p class="realiza">realização<br><a href="https://www.alura.com.br">alura</a> + <a href="https://seiva.com.br">seiva</a></p>
+    <p class="realiza">realização<br><a class="ref" href="https://www.alura.com.br" tabindex="0" data-side="left"
+        data-nome="Alura"
+        data-img="img/alura.png"
+        data-txt="Escola brasileira de tecnologia fundada em 2011, em São Paulo. Oferece formação online em programação, dados, design e inovação, e é hoje uma das maiores plataformas de educação em tecnologia em língua portuguesa."
+        >alura</a> + <a class="ref" href="https://seiva.com.br" tabindex="0" data-side="right"
+        data-nome="Seiva"
+        data-img="img/seiva.png"
+        data-txt="Escola, editora e comunidade criativa brasileira, movida pela ideia de que a arte é para todo mundo. Oferece cursos de escrita, roteiro e publicação, edita livros sobre criação e mantém uma comunidade de pessoas que criam. Lema: coragem para criar."
+        >seiva</a></p>
 
     <details class="creditos">
       <summary>créditos das imagens</summary>
-      <p>Todas as fotografias vêm do <a href="https://commons.wikimedia.org">Wikimedia Commons</a>, sob licenças livres.</p>
+      <p><strong>Mockup em curadoria.</strong> As imagens abaixo vêm do <a href="https://commons.wikimedia.org">Wikimedia Commons</a> sob licença livre e podem ser usadas como estão. As demais &mdash; capas, cartazes, logos, retratos de imprensa e reproduções de obra &mdash; estão aqui apenas para estudo de layout, e precisam de autorização antes de qualquer uso público.</p>
       <p>Tim Berners-Lee &mdash; Web Summit, CC BY 4.0 &middot;
          Olia Lialina &mdash; Lea Röwer / Merz Akademie, CC BY-SA 4.0 &middot;
          Jack Conte &mdash; ninja-bear, CC BY 2.0 &middot;
@@ -397,7 +426,10 @@
          Stewart Brand &mdash; Christopher Michel, CC BY-SA 4.0 &middot;
          primeiro servidor web &mdash; Coolcaesar, CC BY-SA 3.0 &middot;
          Internet Archive &mdash; Beatrice Murch, CC BY 2.0 &middot;
+         preservação (servidores do Internet Archive) &mdash; Jason Scott, CC BY-SA 3.0 &middot;
+         racismo algorítmico &mdash; Pete Woodhead, CC BY 2.0 &middot;
          Creative Commons e ActivityPub &mdash; domínio público.</p>
+      <p>Pendentes de autorização: net.art (obra de Olia Lialina, 1996) &middot; Hito Steyerl e a imagem pobre (still do Art21) &middot; Patreon &middot; <em>We Are as Gods</em> &middot; Wikipédia &middot; Monkey Island &middot; Thimbleweed Park &middot; Chris Freeland (Internet Archive) &middot; arte digital e memória (obra de Giselle Beiguelman) &middot; aarea &middot; Rhizome &middot; <em>The Internet&rsquo;s Own Boy</em> &middot; Enshittification &middot; <em>Empire of AI</em> &middot; Neuromancer &middot; Alura &middot; Seiva.</p>
     </details>
 
   </div><!-- /.prog -->
@@ -426,7 +458,8 @@
       ? '<img class="fig" src="' + img + '" alt="">'
       : '<div class="fig empty">imagem</div>';
 
-    card.innerHTML = fig + '<span class="nome">' + nome + ' /</span>' + txt;
+    card.innerHTML = '<button class="fechar" type="button" aria-label="fechar">&times;</button>'
+                   + fig + '<span class="nome">' + nome + ' /</span>' + txt;
     card.setAttribute('data-side', el.getAttribute('data-side') || 'left');
   }
 
@@ -475,30 +508,55 @@
     }, 120);
   }
 
+  function fechar() {
+    clearTimeout(timer);
+    card.classList.remove('on');
+    svg.style.display = 'none';
+    atual = null;
+  }
+
+  // num toque o navegador dispara mouseenter E click em sequencia: o
+  // primeiro abria a nota e o segundo, vendo-a aberta, fechava na hora.
+  // por isso hover so vale para ponteiro de mouse de verdade.
+  function ehMouse(e) { return !e.pointerType || e.pointerType === 'mouse'; }
+
   var refs = document.querySelectorAll('.ref');
 
   for (var i = 0; i < refs.length; i++) {
     (function (el) {
-      el.addEventListener('mouseenter', function () { mostrar(el); });
-      el.addEventListener('mouseleave', esconder);
-      el.addEventListener('focus',      function () { mostrar(el); });
-      el.addEventListener('blur',       esconder);
+      el.addEventListener('pointerenter', function (e) { if (ehMouse(e)) mostrar(el); });
+      el.addEventListener('pointerleave', function (e) { if (ehMouse(e)) esconder(); });
+
+      // teclado: so abre quando o foco veio de Tab, nunca de toque
+      el.addEventListener('focus', function () {
+        try { if (el.matches(':focus-visible')) mostrar(el); } catch (err) { }
+      });
+      el.addEventListener('blur', esconder);
+
       el.addEventListener('click', function (e) {
+        // no desktop, alura e seiva sao links de verdade: deixa navegar
+        if (el.tagName === 'A' && el.href && !estreito()) return;
         e.preventDefault();
-        if (atual === el && card.classList.contains('on')) {
-          card.classList.remove('on');
-          svg.style.display = 'none';
-          atual = null;
-        } else {
-          mostrar(el);
-        }
+        if (atual === el && card.classList.contains('on')) fechar();
+        else mostrar(el);
       });
     })(refs[i]);
   }
 
+  // tocar fora fecha a nota
+  document.addEventListener('pointerdown', function (e) {
+    if (!card.classList.contains('on')) return;
+    if (card.contains(e.target) || (e.target.closest && e.target.closest('.ref'))) return;
+    fechar();
+  });
+
   // deixar a nota aberta enquanto o mouse estiver sobre ela
-  card.addEventListener('mouseenter', function () { clearTimeout(timer); });
-  card.addEventListener('mouseleave', esconder);
+  card.addEventListener('pointerenter', function (e) { if (ehMouse(e)) clearTimeout(timer); });
+  card.addEventListener('pointerleave', function (e) { if (ehMouse(e)) esconder(); });
+
+  card.addEventListener('click', function (e) {
+    if (e.target && e.target.classList.contains('fechar')) { e.preventDefault(); fechar(); }
+  });
 
   window.addEventListener('resize', function () {
     if (atual && card.classList.contains('on')) {
