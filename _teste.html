@@ -121,8 +121,8 @@
     background: #fff;
     border: 1px solid #999;
     padding: 14px;
-    font-size: 13px;
-    line-height: 1.5;
+    font-size: 11.5px;
+    line-height: 1.45;
     text-align: center;
     z-index: 3;
     max-height: calc(100vh - 24px);   /* nunca mais alta que a janela */
@@ -142,15 +142,6 @@
     width: auto;
     height: auto;
     margin: 0 auto 12px;
-  }
-
-  /* logo claro sobre transparência precisa de fundo escuro para aparecer:
-     basta pôr data-fundo="escuro" no termo */
-  #card .fig.escuro {
-    width: 100%;
-    background: #14110d;
-    padding: 20px 16px;
-    box-sizing: border-box;
   }
 
   /* placeholder enquanto não há imagem */
@@ -193,7 +184,7 @@
   /* ---------------------------------------------------------------
      telas estreitas: a nota vira rodapé fixo, sem linha
      --------------------------------------------------------------- */
-  @media (max-width: 900px) {
+  @media (max-width: 300px) {
     :root { --desloca: 0px; }   /* em tela estreita nao sobra margem para empurrar */
     body { padding: 32px 18px 45vh; }
     #leader { display: none; }
@@ -206,7 +197,7 @@
       overflow: auto;
       border: none;
       border-top: 1px solid #999;
-      font-size: 14.5px;
+      font-size: 13px;
     }
     #card .fig { max-width: 180px; margin: 0 auto 12px; }
     #card .fig.empty { max-width: 180px; }
@@ -247,41 +238,41 @@
     <ol>
       <li><span class="ref" tabindex="0" data-side="left"
           data-nome="Tim Berners-Lee"
-          data-img="img/berners-lee.jpg"
+          data-img="img/berners-lee.jpg?nc=752762162"
           data-txt="Cientista da computação britânico nascido em Londres, em 1955. Inventou a World Wide Web em 1989, enquanto trabalhava no CERN, e desenvolveu o HTML, o HTTP e as URLs. Fundou o W3C em 1994."
           >Tim Berners-Lee</span>, criador da <span class="ref" tabindex="0" data-side="right"
           data-nome="World Wide Web"
-          data-img="img/www.jpg"
+          data-img="img/www.jpg?nc=934831885"
           data-txt="Sistema de documentos ligados por hipertexto, acessível pela internet. Em 30 de abril de 1993 o CERN liberou o código em domínio público, sem cobrança de royalties. Essa decisão &mdash; que podia ter sido outra &mdash; é a razão de a web não ter dono."
           >world wide web</span></li>
 
       <li><span class="ref" tabindex="0" data-side="left"
           data-nome="Olia Lialina"
-          data-img="img/lialina.jpg"
+          data-img="img/lialina.jpg?nc=1779367004"
           data-txt="Artista russa nascida em Moscou, em 1971, pioneira da net.art. &ldquo;My Boyfriend Came Back from the War&rdquo; (1996) é uma das obras fundadoras do campo. Professora na Merz Akademie, em Stuttgart. Arquiva e estuda a web amadora dos anos 90."
           >Olia Lialina</span>, <span class="ref" tabindex="0" data-side="right"
           data-nome="net.art"
-          data-img="img/netart.gif"
+          data-img="img/netart.gif?nc=425881688"
           data-txt="Movimento dos anos 1990 que tratou a internet não como vitrine para a obra, mas como material dela: HTML cru, GIFs, janelas de navegador, links quebrados. Boa parte do acervo desapareceu junto com os servidores que o hospedavam."
           >net artist</span></li>
 
       <li><span class="ref" tabindex="0" data-side="left"
           data-nome="Jack Conte"
-          data-img="img/conte.jpg"
+          data-img="img/conte.jpg?nc=1888229879"
           data-txt="Músico e empresário americano, metade da dupla Pomplamoose. Cofundou o Patreon em 2013 e é o CEO da empresa."
           >Jack Conte</span>, CEO do <span class="ref" tabindex="0" data-side="right"
           data-nome="Patreon"
-          data-img="img/patreon.png"
+          data-img="img/patreon.png?nc=72900398"
           data-txt="Plataforma criada em 2013 em que o público paga assinaturas diretamente a artistas e criadores, sem intermédio de gravadora, editora ou anunciante. É uma empresa privada, financiada por capital de risco."
           >patreon</span></li>
 
       <li><span class="ref" tabindex="0" data-side="left"
           data-nome="Hito Steyerl"
-          data-img="img/steyerl.jpg"
+          data-img="img/steyerl.jpg?nc=690672051"
           data-txt="Artista e ensaísta alemã nascida em Munique, em 1966. Faz videoinstalações e escreve sobre circulação de imagens, vigilância e capital. Professora na Universidade das Artes de Berlim. Autora de &ldquo;Duty Free Art&rdquo;."
           >Hito Steyerl</span>, filósofa e artista sobre <span class="ref" tabindex="0" data-side="right"
           data-nome="a imagem pobre"
-          data-img="img/imagempobre.jpg"
+          data-img="img/imagempobre.jpg?nc=2011883818"
           data-txt="Em ensaio de 2009, Steyerl defende a imagem de baixa resolução, comprimida e pirateada &mdash; a que de fato circula &mdash; contra a imagem rica, cara e imobilizada. A qualidade da imagem, argumenta ela, é uma questão de classe."
           >mídias digitais</span></li>
     </ol>
@@ -291,45 +282,45 @@
     <ol start="5" style="counter-reset: item 4;">
       <li><span class="ref" tabindex="0" data-side="left"
           data-nome="Nina da Hora"
-          data-img="img/ninadahora.jpg"
+          data-img="img/ninadahora.png?nc=1125713892"
           data-txt="Cientista da computação brasileira, nascida em Duque de Caxias. Define-se como hacker antirracista. Pesquisa vieses algorítmicos e os efeitos raciais de sistemas automatizados. Fundou o Instituto da Hora."
           >Nina da Hora</span>, ativista e acadêmica estudando <span class="ref" tabindex="0" data-side="right"
           data-nome="racismo algorítmico"
-          data-img="img/racismo.jpg"
+          data-img="img/racismo.jpg?nc=420660615"
           data-txt="Modo como sistemas automatizados &mdash; reconhecimento facial, crédito, moderação, triagem &mdash; reproduzem e ampliam desigualdades raciais já existentes, com a aparência de neutralidade técnica."
           >ia e racismo</span></li>
 
       <li>exibição de <span class="ref" tabindex="0" data-side="left"
           data-nome="We Are as Gods"
-          data-img="img/weareasgods.jpg"
+          data-img="img/weareasgods.jpg?nc=1730559924"
           data-txt="Documentário de 2020, dirigido por David Alvarado e Jason Sussberg. O título vem da primeira frase do Whole Earth Catalog, em 1968: &ldquo;somos como deuses e é melhor a gente ficar bom nisso&rdquo;. Em 2009, Brand reescreveu a própria frase: &ldquo;somos como deuses e temos que ficar bons nisso&rdquo;."
           >We Are as Gods</span>, filme sobre <span class="ref" tabindex="0" data-side="right"
           data-nome="Stewart Brand"
-          data-img="img/brand.jpg"
+          data-img="img/brand.jpg?nc=1488280546"
           data-txt="Americano nascido em 1938. Editou o Whole Earth Catalog (1968&ndash;1974), cofundou a comunidade online WELL em 1985 e a Long Now Foundation em 1996. É a dobradiça entre a contracultura dos anos 60 e a indústria de tecnologia da Califórnia."
           >Stewart Brand</span></li>
 
       <li><span class="ref" tabindex="0" data-side="left"
           data-nome="Jimmy Wales"
-          data-img="img/wales.jpg"
+          data-img="img/wales.jpg?nc=1645211453"
           data-txt="Empresário americano nascido em 1966, no Alabama. Cofundou a Wikipédia em 2001, com Larry Sanger, e criou a Wikimedia Foundation em 2003."
           >Jimmy Wales</span>, criador da <span class="ref" tabindex="0" data-side="right"
           data-nome="Wikipédia"
-          data-img="img/wikipedia.png"
+          data-img="img/wikipedia.png?nc=834919048"
           data-txt="Enciclopédia livre criada em 2001, escrita e editada por voluntários em mais de 300 idiomas. Não tem publicidade e é mantida por doações. É a prova mais visível de que um bem comum digital pode vencer concorrentes proprietários muito mais ricos."
           >Wikipedia</span></li>
 
       <li><span class="ref" tabindex="0" data-side="left"
           data-nome="Ron Gilbert"
-          data-img="img/gilbert.jpg"
+          data-img="img/gilbert.jpg?nc=779815108"
           data-txt="Game designer americano nascido em 1964. Criou Maniac Mansion (1987) e o motor SCUMM na LucasArts, onde definiu boa parte da gramática da aventura gráfica."
           >Ron Gilbert</span>, criador de <span class="ref" tabindex="0" data-side="right"
           data-nome="Monkey Island"
-          data-img="img/monkeyisland.jpg"
+          data-img="img/monkeyisland.jpg?nc=1013255832"
           data-txt="Série de aventuras gráficas iniciada com The Secret of Monkey Island (1990), na LucasArts, escrita por Gilbert com Dave Grossman e Tim Schafer. Gilbert voltou ao personagem 32 anos depois, em Return to Monkey Island (2022)."
           >Monkey Island</span> e <span class="ref" tabindex="0" data-side="right"
           data-nome="Thimbleweed Park"
-          data-img="img/thimbleweed.png"
+          data-img="img/thimbleweed.png?nc=1552899176"
           data-txt="Aventura point-and-click de 2017, feita por Gilbert e Gary Winnick com financiamento coletivo e construída de propósito como se fosse um jogo de 1987. Um gênero dado como morto pela indústria, revivido pelo público que o quis de volta."
           >Thimbleweed Park</span></li>
     </ol>
@@ -339,45 +330,45 @@
     <ol start="9" style="counter-reset: item 8;">
       <li><span class="ref" tabindex="0" data-side="left"
           data-nome="Chris Freeland"
-          data-img="img/freeland.jpg"
+          data-img="img/freeland.jpg?nc=1217116730"
           data-txt="Bibliotecário, diretor de serviços de biblioteca do Internet Archive. Conduz o programa Open Libraries e foi a voz pública do Archive na disputa judicial com editoras sobre empréstimo digital de livros."
           >Chris Freeland</span>, da <span class="ref" tabindex="0" data-side="right"
           data-nome="Internet Archive"
-          data-img="img/archive.jpg"
+          data-img="img/archive.jpg?nc=546355178"
           data-txt="Biblioteca digital sem fins lucrativos fundada em 1996 por Brewster Kahle, em São Francisco. Mantém a Wayback Machine, com centenas de bilhões de páginas arquivadas, além de livros, softwares, áudio e vídeo."
           >Internet Archive</span></li>
 
       <li><span class="ref" tabindex="0" data-side="left"
           data-nome="Giselle Beiguelman"
-          data-img="img/beiguelman.jpg"
+          data-img="img/beiguelman.jpg?nc=1815362340"
           data-txt="Artista e professora da Faculdade de Arquitetura e Urbanismo da USP. Trabalha com arte digital, memória e apagamento urbano. Autora de &ldquo;Políticas da Imagem: Vigilância e Resistência na Dadosfera&rdquo;."
           >Giselle Beiguelman</span>, <span class="ref" tabindex="0" data-side="right"
           data-nome="arte digital e memória"
-          data-img="img/artedigital.png"
+          data-img="img/artedigital.png?nc=173341877"
           data-txt="Conservar uma obra feita para a internet significa conservar navegadores, plugins, servidores e formatos que deixaram de existir. Diferente de um quadro, ela não sobrevive por inércia: alguém precisa mantê-la funcionando."
           >acadêmica e artista</span></li>
 
       <li><span class="ref" tabindex="0" data-side="left"
           data-nome="aarea"
-          data-img="img/aarea.jpg"
+          data-img="img/aarea.jpg?nc=1100128761"
           data-txt="Plataforma brasileira de arte digital fundada em São Paulo, em 2017, por Livia Benedetti e Marcela Vieira. Comissiona obras feitas especificamente para a internet, exibidas por tempo determinado."
           >aarea</span> e <span class="ref" tabindex="0" data-side="left"
           data-nome="Rhizome"
-          data-img="img/rhizome.png"
+          data-img="img/rhizome.png?nc=442653598"
           data-txt="Organização americana fundada em 1996, ligada ao New Museum de Nova York desde 2003. Comissiona arte digital, mantém o acervo ArtBase e desenvolve ferramentas de arquivamento da web."
           >Rhizome</span>, <span class="ref" tabindex="0" data-side="right"
           data-nome="preservação"
-          data-img="img/vanguarda.jpg"
+          data-img="img/preservacao.jpg?nc=2023617884"
           data-txt="Duas instituições que fazem a mesma coisa &mdash; encomendar e conservar arte feita para a internet &mdash; em escalas de recurso opostas, uma no Brasil e outra nos Estados Unidos."
           >instituições de vanguarda</span></li>
 
       <li>exibição de <span class="ref" tabindex="0" data-side="left"
           data-nome="The Internet&rsquo;s Own Boy"
-          data-img="img/ownboy.jpg"
+          data-img="img/ownboy.jpg?nc=1935437210"
           data-txt="Documentário de 2014, dirigido por Brian Knappenberger. Licenciado em Creative Commons, com cláusula de uso não comercial."
           >The Internet&rsquo;s Own Boy</span>, sobre o <span class="ref" tabindex="0" data-side="right"
           data-nome="Aaron Swartz"
-          data-img="img/swartz.jpg"
+          data-img="img/swartz.jpg?nc=467354852"
           data-txt="Programador e ativista americano (1986&ndash;2013). Coautor da especificação RSS aos 14 anos, trabalhou na Creative Commons, no Reddit e na Open Library do Internet Archive, e liderou a campanha que derrubou a SOPA. Processado pelo governo americano por baixar em massa artigos acadêmicos do JSTOR, morreu em janeiro de 2013, aos 26 anos."
           >Aaron Swartz</span></li>
     </ol>
@@ -387,57 +378,56 @@
     <ol start="13" style="counter-reset: item 12;">
       <li><span class="ref" tabindex="0" data-side="left"
           data-nome="Cory Doctorow"
-          data-img="img/doctorow.jpg"
+          data-img="img/doctorow.jpg?nc=499294205"
           data-txt="Escritor e ativista canadense nascido em Toronto, em 1971. Foi diretor europeu da Electronic Frontier Foundation e cofundou o Boing Boing. Escreve ficção científica e ensaios sobre monopólio, direito autoral e tecnologia."
           >Cory Doctorow</span>, autor de <span class="ref" tabindex="0" data-side="right"
           data-nome="Enshittification"
-          data-img="img/enshittification.png"
+          data-img="img/enshittification.png?nc=385622140"
           data-txt="Termo cunhado por Doctorow para o ciclo de apodrecimento das plataformas: primeiro elas servem bem aos usuários; depois pioram para os usuários a fim de servir às empresas que pagam; por fim pioram para essas também, para reter todo o valor. Foi eleito palavra do ano pela American Dialect Society em 2024."
           >Enshittification</span></li>
 
       <li><span class="ref" tabindex="0" data-side="left"
           data-nome="Karen Hao"
-          data-img="img/hao.jpg"
+          data-img="img/hao.jpg?nc=1343315536"
           data-txt="Jornalista americana. Cobriu inteligência artificial na MIT Technology Review e no Wall Street Journal, e escreveu o primeiro grande perfil jornalístico da OpenAI."
           >Karen Hao</span>, autora de <span class="ref" tabindex="0" data-side="right"
           data-nome="Empire of AI"
-          data-img="img/empireofai.jpg"
+          data-img="img/empireofai.jpg?nc=1914377289"
           data-txt="Livro de 2025 que reconstrói a história da OpenAI e mapeia a economia material da inteligência artificial: o trabalho terceirizado de rotulagem e moderação no Quênia e na Venezuela, e o consumo de energia e água dos data centers."
           >Império da IA</span></li>
 
       <li><span class="ref" tabindex="0" data-side="left"
           data-nome="Christine Lemmer-Webber"
-          data-img="img/lemmer-webber.jpg"
+          data-img="img/lemmer-webber.jpg?nc=90834469"
           data-txt="Desenvolvedora americana, coeditora da especificação ActivityPub. Trabalhou na Creative Commons e cofundou o Spritely Institute, dedicado a redes distribuídas."
           >Christine Lemmer-Webber</span>, <span class="ref" tabindex="0" data-side="right"
           data-nome="Creative Commons"
-          data-img="img/creativecommons.png"
+          data-img="img/creativecommons.png?nc=2131075567"
           data-txt="Organização fundada em 2001 por Lawrence Lessig e outros. Criou um conjunto de licenças que permitem ao autor liberar usos da própria obra sem abrir mão da autoria &mdash; uma alternativa prática ao &ldquo;todos os direitos reservados&rdquo;."
           >Creative Commons</span> e <span class="ref" tabindex="0" data-side="right"
           data-nome="ActivityPub"
-          data-img="img/activitypub.png"
+          data-img="img/activitypub.png?nc=1782086793"
           data-txt="Protocolo aberto de rede social, padrão do W3C desde 2018. Permite que servidores independentes conversem entre si, sem dono central. É a base do Mastodon e do fediverso &mdash; a arquitetura aberta da web voltando por outro caminho."
           >ActivityPub</span></li>
 
       <li><span class="ref" tabindex="0" data-side="left"
           data-nome="William Gibson"
-          data-img="img/gibson.jpg"
+          data-img="img/gibson.jpg?nc=550557218"
           data-txt="Escritor americano-canadense nascido em 1948, radicado em Vancouver. Fundador do cyberpunk. Cunhou o termo &ldquo;ciberespaço&rdquo; no conto &ldquo;Burning Chrome&rdquo;, de 1982."
           >William Gibson</span>, criador de <span class="ref" tabindex="0" data-side="right"
           data-nome="Neuromancer"
-          data-img="img/neuromancer.jpg"
+          data-img="img/neuromancer.jpg?nc=1442030158"
           data-txt="Romance de 1984 que fundou o cyberpunk e deu ao mundo a imagem do ciberespaço, anos antes de a web existir. Gibson o escreveu numa máquina de escrever manual, sem nunca ter usado um computador."
           >Neuromancer</span></li>
     </ol>
 
     <p class="realiza">realização<br><a class="ref" href="https://www.alura.com.br" tabindex="0" data-side="left"
         data-nome="Alura"
-        data-img="img/alura.png"
+        data-img="img/alura.png?nc=1449829117"
         data-txt="Escola brasileira de tecnologia fundada em 2011, em São Paulo. Oferece formação online em programação, dados, design e inovação, e é hoje uma das maiores plataformas de educação em tecnologia em língua portuguesa."
         >alura</a> + <a class="ref" href="https://seiva.com.br" tabindex="0" data-side="right"
         data-nome="Seiva"
-        data-img="img/seiva.png"
-        data-fundo="escuro"
+        data-img="img/seiva.png?nc=1388559260"
         data-txt="Escola, editora e comunidade criativa brasileira, movida pela ideia de que a arte é para todo mundo. Oferece cursos de escrita, roteiro e publicação, edita livros sobre criação e mantém uma comunidade de pessoas que criam. Lema: coragem para criar."
         >seiva</a></p>
 
@@ -447,6 +437,7 @@
       <p>Tim Berners-Lee &mdash; Web Summit, CC BY 4.0 &middot;
          Olia Lialina &mdash; Lea Röwer / Merz Akademie, CC BY-SA 4.0 &middot;
          Jack Conte &mdash; ninja-bear, CC BY 2.0 &middot;
+         Nina da Hora &mdash; Sara Carvalho Gonçalves, CC BY-SA 4.0 &middot;
          Jimmy Wales &mdash; ZMcCune (WMF), CC BY-SA 4.0 &middot;
          Ron Gilbert &mdash; Brian McInnis, CC BY-SA 3.0 &middot;
          Giselle Beiguelman &mdash; Leonor Calasans / IEA-USP, CC BY &middot;
@@ -458,9 +449,10 @@
          Stewart Brand &mdash; Christopher Michel, CC BY-SA 4.0 &middot;
          primeiro servidor web &mdash; Coolcaesar, CC BY-SA 3.0 &middot;
          Internet Archive &mdash; Beatrice Murch, CC BY 2.0 &middot;
+         preservação (servidores do Internet Archive) &mdash; Jason Scott, CC BY-SA 3.0 &middot;
          racismo algorítmico &mdash; Pete Woodhead, CC BY 2.0 &middot;
          Creative Commons e ActivityPub &mdash; domínio público.</p>
-      <p>Pendentes de autorização: Nina da Hora (Jornal da Unicamp) &middot; net.art (obra de Olia Lialina, 1996) &middot; Hito Steyerl e a imagem pobre (still do Art21) &middot; Patreon &middot; <em>We Are as Gods</em> &middot; Wikipédia &middot; Monkey Island &middot; Thimbleweed Park &middot; Chris Freeland (Internet Archive) &middot; arte digital e memória (obra de Giselle Beiguelman) &middot; aarea &middot; Rhizome &middot; instituições de vanguarda (&ldquo;ATENÇÃO!&rdquo;, de Lenora de Barros, comissionada pela aarea) &middot; <em>The Internet&rsquo;s Own Boy</em> &middot; Enshittification &middot; <em>Empire of AI</em> &middot; Neuromancer &middot; Alura &middot; Seiva.</p>
+      <p>Pendentes de autorização: net.art (obra de Olia Lialina, 1996) &middot; Hito Steyerl e a imagem pobre (still do Art21) &middot; Patreon &middot; <em>We Are as Gods</em> &middot; Wikipédia &middot; Monkey Island &middot; Thimbleweed Park &middot; Chris Freeland (Internet Archive) &middot; arte digital e memória (obra de Giselle Beiguelman) &middot; aarea &middot; Rhizome &middot; <em>The Internet&rsquo;s Own Boy</em> &middot; Enshittification &middot; <em>Empire of AI</em> &middot; Neuromancer &middot; Alura &middot; Seiva.</p>
     </details>
 
   </div><!-- /.prog -->
@@ -478,16 +470,15 @@
   var timer = null;
   var atual = null;
 
-  function estreito() { return window.innerWidth <= 900; }
+  function estreito() { return window.innerWidth <= 300; }
 
   function montar(el) {
     var img  = el.getAttribute('data-img');
     var nome = el.getAttribute('data-nome');
     var txt  = el.getAttribute('data-txt');
 
-    var escuro = el.getAttribute('data-fundo') === 'escuro' ? ' escuro' : '';
     var fig = img
-      ? '<img class="fig' + escuro + '" src="' + img + '" alt="">'
+      ? '<img class="fig" src="' + img + '" alt="">'
       : '<div class="fig empty">imagem</div>';
 
     card.innerHTML = '<button class="fechar" type="button" aria-label="fechar">&times;</button>'
