@@ -1,0 +1,12 @@
+* text=auto eol=lf
+*.sh text eol=lf
+*.jpg binary
+*.png binary
+*.webp binary
+# Não vão para o site publicado (git archive)
+.gitignore export-ignore
+.gitattributes export-ignore
+.nojekyll export-ignore
+deploy.sh export-ignore
+README.md export-ignore
+CLAUDE.md export-ignore
